@@ -10,20 +10,15 @@ public class LineItem {
 		this.price = price;
 		this.quantity = quantity;
 	}
-
-	public String getDescription() {
-		return description;
+	public String getLine() {
+		StringBuilder output = new StringBuilder();
+		output.append(this.description+'\t');
+		output.append(Double.toString(this.price)+'\t');
+		output.append(Integer.toString(this.quantity)+'\t');
+		output.append(Double.toString(this.totalAmount())+'\n');
+		return output.toString();
 	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-    double totalAmount() {
+	double totalAmount() {
         return price * quantity;
     }
 }

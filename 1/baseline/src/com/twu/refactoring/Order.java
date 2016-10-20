@@ -24,4 +24,11 @@ public class Order {
     public List<LineItem> getLineItems() {
         return lineItems;
     }
+
+    public String printCustomerInformation() {
+        StringBuilder output = new StringBuilder();
+        output.append(this.name);
+        output.append(this.address + "\n");
+        return output.toString();
+    }
 }
